@@ -3,4 +3,4 @@
 
 Integrantes: 
 - Benjamin Carpio 00205619
-- Eduardo Dominguez 00136319
+- Eduardo Domínguez 00136319
