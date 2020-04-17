@@ -7,6 +7,7 @@ public class Empresa {
     private ArrayList<Empleado> planilla;
 
     public Empresa(String nombre) {
+        planilla = new ArrayList<>();
         this.nombre = nombre;
     }
 

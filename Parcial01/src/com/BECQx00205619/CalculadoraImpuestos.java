@@ -9,11 +9,11 @@ public final class CalculadoraImpuestos {
 
     public double calcularPago(Empleado e){
         //JEJE
-        return jeje;
+        return totalAFP;
     }
 
     public String mostrarTotales(){
         //JEJE
-        return jeje;
+        return "Holi";
     }
 }
