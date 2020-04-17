@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d81752a-57ce-43c4-bf0f-cfea0afa99a2" name="Default Changelist" comment="" />
+    <list default="true" id="0d81752a-57ce-43c4-bf0f-cfea0afa99a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,15 +18,22 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1ag5QGcY0AX7kpJHDbLpPK808rX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -47,6 +58,8 @@
       <option name="presentableId" value="Default" />
       <updated>1587144378665</updated>
       <workItem from="1587144384757" duration="2335000" />
+      <workItem from="1587147603828" duration="755000" />
+      <workItem from="1587148562923" duration="90000" />
     </task>
     <servers />
   </component>
@@ -58,5 +71,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="234" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.175.1600.860@0.0.1920.1040" timestamp="1587146569539" />
+    <state x="772" y="429" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1587147645720">
+      <screen x="0" y="0" width="1848" height="1080" />
+    </state>
+    <state x="772" y="429" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1848.1080/1920.0.1858.1080@0.0.1848.1080" timestamp="1587147645720" />
+    <state x="704" y="295" key="FileChooserDialogImpl" timestamp="1587147832765">
+      <screen x="0" y="0" width="1848" height="1080" />
+    </state>
+    <state x="704" y="295" key="FileChooserDialogImpl/0.0.1848.1080/1920.0.1858.1080@0.0.1848.1080" timestamp="1587147832765" />
+    <state x="620" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1587147603339">
+      <screen x="0" y="0" width="1848" height="1080" />
+    </state>
+    <state x="620" y="364" key="com.intellij.ide.util.TipDialog/0.0.1848.1080/1920.0.1858.1080@0.0.1848.1080" timestamp="1587147603339" />
+    <state x="306" y="160" key="new project wizard" timestamp="1587148651413">
+      <screen x="0" y="0" width="1848" height="1080" />
+    </state>
+    <state x="306" y="160" key="new project wizard/0.0.1848.1080/1920.0.1858.1080@0.0.1848.1080" timestamp="1587148651413" />
   </component>
 </project>

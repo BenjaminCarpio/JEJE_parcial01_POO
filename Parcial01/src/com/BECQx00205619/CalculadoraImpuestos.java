@@ -1,4 +1,5 @@
-package com.BECQx00205619;
+package com.ESDP.x00136319;
+
 
 public final class CalculadoraImpuestos {
     private static double totalRenta;

@@ -1,4 +1,5 @@
-package com.BECQx00205619;
+package com.ESDP.x00136319;
+
 
 import java.util.ArrayList;
 
@@ -41,4 +42,6 @@ abstract class Empleado {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+    public abstract String toString();
 }

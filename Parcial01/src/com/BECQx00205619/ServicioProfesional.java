@@ -1,4 +1,5 @@
-package com.BECQx00205619;
+package com.ESDP.x00136319;
+
 
 public class ServicioProfesional extends Empleado{
     private int mesesContrato;
@@ -14,5 +15,16 @@ public class ServicioProfesional extends Empleado{
 
     public void setMesesContrato(int mesesContrato) {
         this.mesesContrato = mesesContrato;
+    }
+
+    @Override
+    public String toString() {
+        return "Tipo contrato: ServicioProfecional {" +
+                "Nombre: '" + nombre + '\'' +
+                ", Puesto: '" + puesto + '\'' +
+                ", Salario: $" + salario +
+                ", Documentos: " + documentos +
+                ", DuracionContrato: " + mesesContrato + " meses" +
+                " }\n";
     }
 }

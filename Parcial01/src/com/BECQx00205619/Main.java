@@ -1,5 +1,7 @@
-package com.BECQx00205619;
+package com.ESDP.x00136319;
 
+//Benjamin Carpio 00205619
+//Eduardo Dominguez 00136319
 import java.util.Scanner;
 
 public class Main {
@@ -24,7 +26,12 @@ public class Main {
                     agregarEmpleado();
                     break;
                 case 2:
+                    despedirEmpleado();
+                    break;
                 case 3:
+                    System.out.println("Mostrando plantilla de la empresa: \n");
+                    System.out.println(empresa.getPlanilla());
+                    break;
                 case 4:
                 case 5:
                 case 6:
@@ -42,27 +49,26 @@ public class Main {
         String nombre, puesto;
         double salario;
         int mesesContrato, extension, opcion;
+
+        System.out.println("Ingrese los datos del empleado a continuacion:");
         System.out.println("1. Contratar un Servicio Profesional\n2. Contratar una plaza fija\n3. Regresar");
-        opcion = scan.nextInt();
-        scan.nextLine();
+            opcion = scan.nextInt(); scan.nextLine();
 
         System.out.print("Nombre:");
-        nombre = scan.nextLine();
+            nombre = scan.nextLine();
         System.out.print("Puesto:");
-        puesto = scan.nextLine();
+            puesto = scan.nextLine();
         System.out.print("Indique el salario que se le otorgara al empleado:");
-        salario = scan.nextDouble();    scan.nextLine();
+            salario = scan.nextDouble();    scan.nextLine();
 
         try {
             if (opcion == 1) {
-                System.out.println("Ingrese los datos del empleado a continuacion:");
                 System.out.print("Indique la duracion del contrato en meses:");
-                mesesContrato = scan.nextInt(); scan.nextLine();
+                    mesesContrato = scan.nextInt(); scan.nextLine();
                 empresa.addEmpleado(new ServicioProfesional(nombre, puesto, salario, mesesContrato));
             } else if (opcion == 2) {
-                System.out.println("Ingrese los datos del empleado a continuacion:");
                 System.out.print("Indique la extension del telefono:");
-                extension = scan.nextInt(); scan.nextLine();
+                    extension = scan.nextInt(); scan.nextLine();
                 empresa.addEmpleado(new PlazaFija(nombre, puesto, salario, extension));
             } else if(opcion == 3){
                 return;
@@ -74,4 +80,26 @@ public class Main {
             return;
         }
     }
-}
+
+    public static void despedirEmpleado(){
+        String nombre, op1;
+
+        System.out.println("Desea ver la planilla antes de proceder con el despido del empleado? S/N ");
+        op1 = scan.nextLine();
+
+        if(op1.equalsIgnoreCase("S")){
+            System.out.println("Mostrando plantilla de la empresa: \n");
+            System.out.println(empresa.getPlanilla());
+
+            System.out.println("Ingrese el nombre del empleado a despedir");
+            nombre = scan.nextLine();
+            empresa.quitEmpleado(nombre);
+
+        }else if(op1.equalsIgnoreCase("N")){
+            System.out.println("Ingrese el nombre del empleado a despedir");
+            nombre = scan.nextLine();
+            empresa.quitEmpleado(nombre);
+        }else
+            System.out.println("Ingrese opcion valida");
+    }
+ }

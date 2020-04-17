@@ -1,4 +1,4 @@
-package com.BECQx00205619;
+package com.ESDP.x00136319;
 
 import java.util.ArrayList;
 
@@ -18,11 +18,22 @@ public class Empresa {
     public ArrayList<Empleado> getPlanilla() {
         return planilla;
     }
-    public void addEmpleado(Empleado e){
-        //JEJE
-    }
-    public void quitEmpleado(String nombreDespedir){
-        //JEJE
+
+    public void addEmpleado(Empleado Persona) {
+        planilla.add(Persona);
+
     }
 
+    public void quitEmpleado(String nombreDespedir) {
+        if (planilla == null) {
+            System.out.println("No hay empleados en la planilla");
+        }else{
+            Empleado aux = null;
+            for (Empleado nombre : planilla) {
+                if(nombre.getNombre().equalsIgnoreCase(nombreDespedir)) ;
+                aux = nombre;
+            }
+            planilla.remove(aux);
+        }
+    }
 }

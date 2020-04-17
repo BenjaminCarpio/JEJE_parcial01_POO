@@ -1,6 +1,6 @@
-package com.BECQx00205619;
+package com.ESDP.x00136319;
 
-public class PlazaFija extends Empleado{
+public class PlazaFija extends Empleado {
     private int extension;
 
     public PlazaFija(String nombre, String puesto, double salario, int extension) {
@@ -14,5 +14,16 @@ public class PlazaFija extends Empleado{
 
     public void setExtension(int extension) {
         this.extension = extension;
+    }
+
+    @Override
+    public String toString() {
+        return "Tipo contrato: PlazaFija {" +
+                "Nombre: '" + nombre + '\'' +
+                ", Puesto: '" + puesto + '\'' +
+                ", Salario: $" + salario +
+                ", Documentos: " + documentos +
+                ", Extension: " + extension +
+                " }\n";
     }
 }
