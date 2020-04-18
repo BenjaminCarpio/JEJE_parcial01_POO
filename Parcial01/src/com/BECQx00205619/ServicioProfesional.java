@@ -1,4 +1,6 @@
-package com.BECQx00205619;
+package com.ESDP.x00136319;
+
+import java.util.ArrayList;
 
 public class ServicioProfesional extends Empleado{
     private int mesesContrato;
@@ -18,11 +20,12 @@ public class ServicioProfesional extends Empleado{
 
     @Override
     public String toString() {
+
         return "Tipo contrato: ServicioProfecional {" +
                 "Nombre: '" + nombre + '\'' +
                 ", Puesto: '" + puesto + '\'' +
                 ", Salario: $" + salario +
-                ", Documentos: " + documentos +
+                ", Documentos: " + documentos.toString() +
                 ", DuracionContrato: " + mesesContrato + " meses" +
                 " }\n";
     }

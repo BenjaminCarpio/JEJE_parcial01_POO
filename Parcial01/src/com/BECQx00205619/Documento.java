@@ -1,4 +1,4 @@
-package com.BECQx00205619;
+package com.ESDP.x00136319;
 
 public class Documento {
     private String nombre;
@@ -15,5 +15,13 @@ public class Documento {
 
     public String getNumero() {
         return numero;
+    }
+
+    @Override
+    public String toString() {
+        return "Documento{" +
+                "Nombre:'" + nombre + '\'' +
+                ", Numero:'" + numero + '\'' +
+                '}';
     }
 }

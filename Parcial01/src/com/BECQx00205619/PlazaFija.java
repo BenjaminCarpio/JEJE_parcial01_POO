@@ -1,4 +1,4 @@
-package com.BECQx00205619;
+package com.ESDP.x00136319;
 public class PlazaFija extends Empleado {
     private int extension;
 
@@ -21,7 +21,7 @@ public class PlazaFija extends Empleado {
                 "Nombre: '" + nombre + '\'' +
                 ", Puesto: '" + puesto + '\'' +
                 ", Salario: $" + salario +
-                ", Documentos: " + documentos +
+                ", Documentos: " + documentos.toString() +
                 ", Extension: " + extension +
                 " }\n";
     }
