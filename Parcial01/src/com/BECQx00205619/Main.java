@@ -1,4 +1,4 @@
-package com.ESDP.x00136319;
+package com.BECQx00205619;
 
 //Benjamin Carpio 00205619
 //Eduardo Dominguez 00136319
@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner scan = new Scanner(System.in);
-    static Empresa empresa = new Empresa("JEJE Company");
+    static Empresa company = new Empresa("JEJE Company");
+
 
     public static void main(String[] args) throws InvalidOptionInMenu {
         String MenuPrincipal = "1) Agregar empleado\n" +
@@ -30,7 +31,7 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("Mostrando plantilla de la empresa: \n");
-                    System.out.println(empresa.getPlanilla());
+                    System.out.println(company.getPlanilla());
                     break;
                 case 4:
                 case 5:
@@ -46,30 +47,75 @@ public class Main {
     }
 
     public static void agregarEmpleado() throws InvalidOptionInMenu {
-        String nombre, puesto;
+        Empleado employee = null;
+        Documento document = null;
+        String nombre, puesto, nombreDocumento, numeroDocumento;
         double salario;
-        int mesesContrato, extension, opcion;
+        boolean continuar = true;
+        int mesesContrato, extension, opcion, cantDocumentos;
 
         System.out.println("Ingrese los datos del empleado a continuacion:");
         System.out.println("1. Contratar un Servicio Profesional\n2. Contratar una plaza fija\n3. Regresar");
-            opcion = scan.nextInt(); scan.nextLine();
+        opcion = scan.nextInt(); scan.nextLine();
 
-        System.out.print("Nombre:");
-            nombre = scan.nextLine();
-        System.out.print("Puesto:");
-            puesto = scan.nextLine();
-        System.out.print("Indique el salario que se le otorgara al empleado:");
-            salario = scan.nextDouble();    scan.nextLine();
 
         try {
             if (opcion == 1) {
+                System.out.print("Nombre:");
+                nombre = scan.nextLine();
+                System.out.print("Puesto:");
+                puesto = scan.nextLine();
+                System.out.print("Indique el salario que se le otorgara al empleado:");
+                salario = scan.nextDouble();    scan.nextLine();
                 System.out.print("Indique la duracion del contrato en meses:");
                     mesesContrato = scan.nextInt(); scan.nextLine();
-                empresa.addEmpleado(new ServicioProfesional(nombre, puesto, salario, mesesContrato));
+                    employee =new ServicioProfesional(nombre,puesto,salario,mesesContrato);
+                System.out.println("Cuantos documentos desea agregar? (Minimo 1)");
+                do {
+                    cantDocumentos = scan.nextInt(); scan.nextLine();
+                    if (cantDocumentos < 1) {
+                        System.out.println("Minimo 1 documento");
+                    } else if(cantDocumentos >= 1) {
+                        for(int i = 0; i< cantDocumentos; i++ ){
+                            System.out.print("Ingrese el nombre del documento:\n");
+                            nombreDocumento = scan.nextLine();
+                            System.out.print("Ingrese el numero del documento:\n");
+                            numeroDocumento = scan.nextLine();
+                            document = new Documento(nombreDocumento, numeroDocumento);
+                            employee.addDocumento(document);
+                        }
+                        continuar = false;
+                    }
+                }while(continuar);
+                    company.addEmpleado(employee);
             } else if (opcion == 2) {
+                System.out.print("Nombre:");
+                nombre = scan.nextLine();
+                System.out.print("Puesto:");
+                puesto = scan.nextLine();
+                System.out.print("Indique el salario que se le otorgara al empleado:");
+                salario = scan.nextDouble();    scan.nextLine();
                 System.out.print("Indique la extension del telefono:");
                     extension = scan.nextInt(); scan.nextLine();
-                empresa.addEmpleado(new PlazaFija(nombre, puesto, salario, extension));
+                employee =new PlazaFija(nombre,puesto,salario,extension);
+                System.out.println("Cuantos documentos desea agregar? (Minimo 1)");
+                do {
+                    cantDocumentos = scan.nextInt(); scan.nextLine();
+                    if (cantDocumentos < 1) {
+                        System.out.println("Minimo 1 documento");
+                    } else if(cantDocumentos >= 1) {
+                        for(int i = 0; i< cantDocumentos; i++ ){
+                            System.out.print("Ingrese el nombre del documento:\n");
+                            nombreDocumento = scan.nextLine();
+                            System.out.print("Ingrese el numero del documento:\n");
+                            numeroDocumento = scan.nextLine();
+                            document = new Documento(nombreDocumento, numeroDocumento);
+                            employee.addDocumento(document);
+                        }
+                        continuar = false;
+                    }
+                }while(continuar);
+                    company.addEmpleado(employee);
             } else if(opcion == 3){
                 return;
             }else{
@@ -89,16 +135,16 @@ public class Main {
 
         if(op1.equalsIgnoreCase("S")){
             System.out.println("Mostrando plantilla de la empresa: \n");
-            System.out.println(empresa.getPlanilla());
+            System.out.println(company.getPlanilla());
 
             System.out.println("Ingrese el nombre del empleado a despedir");
             nombre = scan.nextLine();
-            empresa.quitEmpleado(nombre);
+            company.quitEmpleado(nombre);
 
         }else if(op1.equalsIgnoreCase("N")){
             System.out.println("Ingrese el nombre del empleado a despedir");
             nombre = scan.nextLine();
-            empresa.quitEmpleado(nombre);
+            company.quitEmpleado(nombre);
         }else
             System.out.println("Ingrese opcion valida");
     }

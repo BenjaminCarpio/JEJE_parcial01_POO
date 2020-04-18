@@ -1,5 +1,4 @@
-package com.ESDP.x00136319;
-
+package com.BECQx00205619;
 
 import java.util.ArrayList;
 
@@ -33,7 +32,7 @@ abstract class Empleado {
     }
 
     public void addDocumento(Documento d){
-        //JEJE
+        documentos.add(d);
     }
     public void removeDocumento(String nombreDocumentoRemover){
         //JEJE

@@ -1,5 +1,4 @@
-package com.ESDP.x00136319;
-
+package com.BECQx00205619;
 
 public class ServicioProfesional extends Empleado{
     private int mesesContrato;
