@@ -2,6 +2,7 @@ package com.ESDP.x00136319;
 
 //Benjamin Carpio 00205619
 //Eduardo Dominguez 00136319
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
@@ -19,6 +20,7 @@ public class Main {
 
         boolean continuar = true;
         do {
+            //int opc = Integer.parseInt(JOptionPane.showInputDialog(null, MenuPrincipal));
             System.out.println(MenuPrincipal);
             int opc = scan.nextInt();
             scan.nextLine();
@@ -30,49 +32,14 @@ public class Main {
                     despedirEmpleado();
                     break;
                 case 3:
-                    System.out.println("Mostrando plantilla de la empresa: \n");
+                    //JOptionPane.showMessageDialog(null, "Mostrando planilla de la empresa:" );
+
+                    System.out.println("Mostrando planilla de la empresa: \n");
+                    //JOptionPane.showMessageDialog(null, company.getPlanilla());
                     System.out.println(company.getPlanilla());
                     break;
                 case 4:
-                    System.out.println("Calculando Salario del empleado\n");
-
-                    //Mostramos lista para posteriormente que ingrese el nombre del empleado al que se le calculara el sueldo
-                    System.out.println("Mostrando plantilla de la empresa: \n");
-                    System.out.println(company.getPlanilla());
-                    //POR SI SON 2 CON MISMO NOMBRE XD
-/*
-                    if (planilla == null) {
-                        System.out.println("No hay empleados en la planilla");
-                    } else {
-                        Empleado aux = null;
-                        for (Empleado nombre : planilla) {
-                            if (nombre.getNombre().equalsIgnoreCase(nombreDespedir)) {
-                                aux = nombre;
-                                contador++;
-                            }
-                        }
-                        if (contador == 0) {
-                            System.out.println("El empleado " + nombreDespedir + " no se encuentra en la planilla");
-                        } else if (contador == 1) {
-                            planilla.remove(aux);
-                        } else if (contador > 1) {
-                            System.out.println("Hay mas de 1 empleado con ese nombre, favor especifique cual empleado de nombre" + nombreDespedir + " es quien desea eliminar.");
-                            for (Empleado nombre : planilla) {
-                                if (nombre.getNombre().equalsIgnoreCase(nombreDespedir)) {
-                                    System.out.println(nombre + "\n Es este el empleado que desea eliminar? (S/N)");
-                                    opcion = scan.nextLine();
-                                    if(opcion.equalsIgnoreCase("s")) {
-                                        aux = nombre;
-                                        planilla.remove(aux);
-                                        System.out.println("El empleado ha sido despedido, volviendo al menu....\n");
-                                        break;
-                                    }else
-                                        System.out.println("\nBuscando siguiente empleado....\n");
-                                }
-                            }
-                        }
-                    }
-*/
+                    ConsultarSueldo();
                     break;
                 case 5:
                     System.out.println(CalculadoraImpuestos.mostrarTotales());
@@ -189,5 +156,54 @@ public class Main {
             company.quitEmpleado(nombre);
         }else
             System.out.println("Ingrese opcion valida");
+    }
+
+    public static void ConsultarSueldo(){
+        String nombreCalcular= " ", opcion;
+        System.out.println("Calcular sueldo del empleado\n");
+        int contador = 0;
+
+        //Mostramos lista para posteriormente que ingrese el nombre del empleado al que se le calculara el sueldo
+        System.out.println("Mostrando plantilla de la empresa: \n");
+        System.out.println(company.getPlanilla());
+        //POR SI SON 2 CON MISMO NOMBRE
+        System.out.println("Escriba el nombre del empleado al cual quiere calcular su sueldo liquido");
+        nombreCalcular = scan.nextLine();
+
+        if (company.getPlanilla() == null) {
+            System.out.println("No hay empleados en la planilla");
+        } else {
+            Empleado aux = null;
+            for (Empleado nombre : company.getPlanilla() ) {
+                if (nombre.getNombre().equalsIgnoreCase(nombreCalcular)) {
+                    aux = nombre;
+                    contador++;
+                }
+            }
+            if (contador == 0) {
+                System.out.println("El empleado " + nombreCalcular + " no se encuentra en la planilla");
+            } else if (contador == 1) {
+                System.out.print("Sueldo final: $");
+                System.out.println(CalculadoraImpuestos.calcularPago(aux));
+                System.out.println("Se ha pagado correctamente, volviendo al menu....\n");
+
+            } else if (contador > 1) {
+                System.out.println("Hay mas de 1 empleado con ese nombre, favor especifique cual empleado de nombre" + nombreCalcular + " escogera.");
+                for (Empleado nombre : company.getPlanilla() ) {
+                    if (nombre.getNombre().equalsIgnoreCase(nombreCalcular)) {
+                        System.out.println(nombre + "\n Es este el empleado que quiere escoger? (S/N)");
+                        opcion = scan.nextLine();
+                        if(opcion.equalsIgnoreCase("s")) {
+                            aux = nombre;
+                            System.out.print("Sueldo final: $");
+                            System.out.println(CalculadoraImpuestos.calcularPago(aux));
+                            System.out.println("Se ha pagado correctamente, volviendo al menu....\n");
+                            break;
+                        }else
+                            System.out.println("\nBuscando siguiente empleado....\n");
+                    }
+                }
+            }
+        }
     }
  }

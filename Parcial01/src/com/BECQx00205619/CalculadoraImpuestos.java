@@ -46,6 +46,7 @@ public final class CalculadoraImpuestos {
             double renta = Persona.getSalario() * 0.1;
             //Retorna el salario del empleado
             pagofinal = Persona.getSalario() - renta;
+
         }
         return pagofinal;
     }

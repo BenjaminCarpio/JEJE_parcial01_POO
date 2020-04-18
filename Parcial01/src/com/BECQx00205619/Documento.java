@@ -20,8 +20,8 @@ public class Documento {
     @Override
     public String toString() {
         return "Documento{" +
-                "Nombre:'" + nombre + '\'' +
-                ", Numero:'" + numero + '\'' +
+                "Nombre:'" + getNombre() + '\'' +
+                ", Numero:'" + getNumero() + '\'' +
                 '}';
     }
 }

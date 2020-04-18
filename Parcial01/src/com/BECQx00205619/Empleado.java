@@ -35,7 +35,7 @@ abstract class Empleado {
         documentos.add(d);
     }
     public void removeDocumento(String nombreDocumentoRemover){
-        //JEJE
+        documentos.remove(nombreDocumentoRemover);
     }
 
     public void setSalario(double salario) {
