@@ -1,4 +1,4 @@
-package com.ESDP.x00136319;
+package com.BECQx00205619;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -43,6 +43,7 @@ public class Empresa {
                 System.out.println("El empleado " + nombreDespedir + " no se encuentra en la planilla");
             } else if (contador == 1) {
                 planilla.remove(aux);
+                System.out.println("El empleado ha sido despedido, volviendo al menu....\n");
             } else if (contador > 1) {
                 System.out.println("Hay mas de 1 empleado con ese nombre, favor especifique cual empleado de nombre" + nombreDespedir + " es quien desea eliminar.");
                 for (Empleado nombre : planilla) {

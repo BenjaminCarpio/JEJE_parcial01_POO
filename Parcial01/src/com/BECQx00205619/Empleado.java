@@ -1,4 +1,4 @@
-package com.ESDP.x00136319;
+package com.BECQx00205619;
 
 import java.util.ArrayList;
 
@@ -34,7 +34,7 @@ abstract class Empleado {
     public void addDocumento(Documento d){
         documentos.add(d);
     }
-    public void removeDocumento(String nombreDocumentoRemover){
+    public void removeDocumento(String nombreDocumentoRemover){ //Funciona pero no esta implementado en main
         documentos.remove(nombreDocumentoRemover);
     }
 

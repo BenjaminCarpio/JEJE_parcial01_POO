@@ -1,4 +1,4 @@
-package com.ESDP.x00136319;
+package com.BECQx00205619;
 public class PlazaFija extends Empleado {
     private int extension;
 
